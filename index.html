@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebSwan · Google Algorithm</title>
+  <title>WebSwan · Algorithm & Compliance</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
+    /* --- Base & Reset --- */
     * {
       margin: 0;
       padding: 0;
@@ -14,7 +15,7 @@
 
     body {
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #0b1b2f;  /* deep dark blue */
+      background: #0b1b2f;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -22,117 +23,107 @@
       padding: 1.5rem;
     }
 
+    /* --- MAIN CARD --- */
     .card {
-      max-width: 780px;
+      max-width: 820px;
       width: 100%;
       background: white;
-      border-radius: 2.5rem;
-      padding: 2.5rem 2.8rem;
+      border-radius: 2rem;
+      padding: 2rem 2.2rem;
       box-shadow: 0 20px 40px -8px rgba(0, 20, 40, 0.6);
+      overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 0 auto;
     }
 
-    /* header */
+    /* --- Header --- */
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      border-bottom: 3px solid #1e6f9f; /* ocean blue */
-      padding-bottom: 1.2rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .brand-icon {
-      background: #1e6f9f;
-      color: white;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: 0 6px 12px rgba(30, 111, 159, 0.25);
-    }
-
-    .brand-text {
-      flex: 1;
+      border-bottom: 3px solid #1e6f9f;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .brand h1 {
-      font-size: 1.9rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0a1e2f; /* dark blue */
+      color: #0a1e2f;
       line-height: 1.2;
     }
 
     .brand h1 span {
-      color: #1e6f9f; /* ocean blue */
+      color: #1e6f9f;
     }
 
     .brand .sub {
       display: block;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 400;
       color: #2c4b66;
       letter-spacing: 0.02em;
-      margin-top: 0.1rem;
+      margin-top: 0.05rem;
     }
 
-    /* main card */
-    .link-card {
+    /* --- Grid --- */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Cards (cleaner, like screenshot) --- */
+    .card-module {
       background: #f5faff;
-      border-radius: 1.8rem;
-      padding: 2rem 1.8rem;
+      border-radius: 1.2rem;
+      padding: 1.4rem 1.2rem;
       border: 1px solid #e0edf7;
-      box-shadow: 0 4px 8px rgba(0, 30, 60, 0.02);
       transition: all 0.2s;
-      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
     }
 
-    .link-card:hover {
+    .card-module:hover {
       background: #ecf7ff;
       border-color: #8fc8e8;
-      transform: translateY(-4px);
-      box-shadow: 0 14px 24px -8px rgba(20, 70, 120, 0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px -6px rgba(20, 70, 120, 0.08);
     }
 
-    .link-card .card-icon {
-      font-size: 2.2rem;
+    .card-module .card-icon {
+      font-size: 1.4rem;
       color: #1e6f9f;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
-    .link-card h2 {
-      font-size: 1.5rem;
+    .card-module h2 {
+      font-size: 1rem;
       font-weight: 600;
       color: #0a1e2f;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.3rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.4rem;
     }
 
-    .link-card h2 i {
+    .card-module h2 i {
       color: #1e6f9f;
-      font-size: 1.3rem;
+      font-size: 0.9rem;
     }
 
-    .link-card p {
-      font-size: 1rem;
+    .card-module p {
+      font-size: 0.85rem;
       color: #1f3c54;
-      line-height: 1.6;
-      margin-bottom: 1.8rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex: 1;
     }
 
-    .link-card a {
+    .card-module a {
       background: white;
-      padding: 0.8rem 1.8rem;
-      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.8rem;
       text-decoration: none;
       color: #0a1e2f;
       border: 1.5px solid #b2d6ed;
@@ -140,31 +131,55 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      gap: 0.4rem;
+      align-self: flex-start;
     }
 
-    .link-card a i {
+    .card-module a i {
       color: #1e6f9f;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       transition: transform 0.2s;
     }
 
-    .link-card a:hover {
+    .card-module a:hover {
       background: #0a1e2f;
       border-color: #0a1e2f;
       color: white;
-      box-shadow: 0 8px 14px -6px rgba(10, 30, 47, 0.25);
     }
 
-    .link-card a:hover i {
+    .card-module a:hover i {
       color: white;
-      transform: translateX(4px);
+      transform: translateX(3px);
     }
 
-    /* pricing / connect button */
+    /* --- "The WebSwan" branding line --- */
+    .webswan-brand {
+      text-align: center;
+      padding: 0.6rem 0 0.8rem 0;
+      border-top: 2px solid #dbeaf5;
+      margin-bottom: 1.2rem;
+    }
+
+    .webswan-brand h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0a1e2f;
+    }
+
+    .webswan-brand h3 i {
+      color: #1e6f9f;
+      margin-right: 8px;
+    }
+
+    .webswan-brand p {
+      font-size: 0.85rem;
+      color: #2c4b66;
+      margin-top: 2px;
+    }
+
+    /* --- Pricing Button --- */
     .pricing-row {
-      margin-top: 1.5rem;
+      margin: 0.6rem 0 1.2rem 0;
       display: flex;
       justify-content: center;
     }
@@ -172,49 +187,279 @@
     .pricing-link {
       background: #0a1e2f;
       color: white !important;
-      padding: 0.9rem 2.2rem;
-      border-radius: 60px;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       text-decoration: none;
-      border: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.8rem;
-      box-shadow: 0 8px 16px -6px rgba(10, 30, 47, 0.3);
+      gap: 0.6rem;
+      box-shadow: 0 6px 14px -4px rgba(10, 30, 47, 0.3);
       transition: all 0.2s;
       border: 1.5px solid transparent;
     }
 
     .pricing-link i {
       color: #8fc8e8;
-      font-size: 1rem;
+      font-size: 0.85rem;
       transition: transform 0.2s;
     }
 
     .pricing-link:hover {
       background: #1e6f9f;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px -8px rgba(30, 111, 159, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -6px rgba(30, 111, 159, 0.35);
     }
 
     .pricing-link:hover i {
-      transform: translateX(4px);
+      transform: translateX(3px);
       color: white;
     }
 
-    /* footer with copyright */
+    /* --- State Compliance Module --- */
+    .compliance-module {
+      background: #f5faff;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #e0edf7;
+      margin-top: 0.2rem;
+    }
+
+    .compliance-module .module-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .compliance-module .module-header i {
+      font-size: 1.3rem;
+      color: #1e6f9f;
+    }
+
+    .compliance-module .module-header h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0a1e2f;
+    }
+
+    .compliance-module .module-header h2 span {
+      color: #1e6f9f;
+    }
+
+    .state-input-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    #stateInput {
+      flex: 1;
+      min-width: 160px;
+      padding: 11px 18px;
+      border-radius: 50px;
+      border: 2px solid #d0dcec;
+      font-size: 0.9rem;
+      color: #0a1e2f;
+      transition: border-color 0.25s, box-shadow 0.2s;
+      outline: none;
+      background: white;
+    }
+
+    #stateInput:focus {
+      border-color: #1e6f9f;
+      box-shadow: 0 0 0 4px rgba(30, 111, 159, 0.12);
+    }
+
+    .check-btn {
+      background: linear-gradient(45deg, #0a1e2f, #1e6f9f);
+      color: white;
+      border: none;
+      padding: 11px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: opacity 0.2s, transform 0.15s;
+      flex-shrink: 0;
+    }
+
+    .check-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(30, 111, 159, 0.2);
+    }
+
+    /* Result Box */
+    .result-box {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #e3e3e3;
+      display: none;
+      animation: fadeSlide 0.35s ease;
+      margin-top: 0.2rem;
+    }
+
+    .result-box.show {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-header {
+      background: linear-gradient(90deg, #0a1e2f, #1e6f9f);
+      color: white;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .result-body {
+      padding: 12px 14px;
+      background: #f9f9f9;
+    }
+
+    .result-content {
+      background: white;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 8px;
+      border: 2px solid #e0e0e0;
+    }
+
+    .result-content h3 {
+      color: #0a1e2f;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+    }
+
+    .result-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .result-content ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #1f3c54;
+    }
+
+    .result-content ul li:last-child {
+      border-bottom: none;
+    }
+
+    .result-content ul li i {
+      color: #1e6f9f;
+      margin-top: 2px;
+      min-width: 14px;
+      font-size: 0.7rem;
+    }
+
+    .result-content .state-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #0a1e2f, #1e6f9f);
+      color: white;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+    }
+
+    .result-content .compliance-note {
+      background: #f0f7ff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin: 6px 0;
+      border-left: 4px solid #1e6f9f;
+      font-size: 0.8rem;
+      color: #1f3a57;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .btn-open, .btn-copy {
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-open {
+      background: linear-gradient(45deg, #0a1e2f, #1e6f9f);
+      color: white;
+      flex: 1;
+      min-width: 100px;
+      justify-content: center;
+    }
+
+    .btn-open:hover {
+      opacity: 0.88;
+    }
+
+    .btn-copy {
+      background: white;
+      color: #0a1e2f;
+      border: 2px solid #0a1e2f;
+      flex-shrink: 0;
+    }
+
+    .btn-copy:hover {
+      background: #0a1e2f;
+      color: white;
+    }
+
+    .compliance-module .footnote {
+      font-size: 0.75rem;
+      color: #1f4763;
+      margin-top: 0.5rem;
+    }
+
+    .compliance-module .footnote i {
+      color: #1e6f9f;
+      margin-right: 4px;
+    }
+
+    /* --- Footer --- */
     .footer-note {
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
       border-top: 2px solid #dbeaf5;
-      padding-top: 1.5rem;
+      padding-top: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: #1f4763;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.3rem;
     }
 
     .footer-note .copyright {
@@ -223,7 +468,7 @@
 
     .footer-note .copyright i {
       color: #1e6f9f;
-      margin-right: 6px;
+      margin-right: 4px;
     }
 
     .footer-note .brand-tag {
@@ -231,24 +476,29 @@
       font-weight: 600;
     }
 
-    @media (max-width: 550px) {
+    /* --- Responsive --- */
+    @media (max-width: 700px) {
       .card {
-        padding: 1.8rem 1.2rem;
+        padding: 1.4rem 1.2rem;
+      }
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
       .brand h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
-      .link-card {
-        padding: 1.5rem;
+      .state-input-row {
+        flex-direction: column;
       }
-      .link-card a {
+      .check-btn {
         width: 100%;
         justify-content: center;
       }
       .pricing-link {
         width: 100%;
         justify-content: center;
-        padding: 0.9rem 1.2rem;
+        padding: 0.7rem 1.2rem;
       }
       .footer-note {
         flex-direction: column;
@@ -256,42 +506,83 @@
         text-align: center;
       }
     }
+
+    @media (max-width: 400px) {
+      .card {
+        padding: 1rem 0.8rem;
+        border-radius: 1.4rem;
+      }
+      .card-module a {
+        width: 100%;
+        justify-content: center;
+      }
+      .result-actions {
+        flex-direction: column;
+      }
+      .btn-open, .btn-copy {
+        width: 100%;
+        justify-content: center;
+      }
+      .compliance-module {
+        padding: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card" role="main">
-    <!-- header -->
+
+  <div class="card">
+    <!-- Header -->
     <div class="brand">
-      <div class="brand-icon" aria-hidden="true">
-        <i class="fas fa-swan"></i>
+      <h1>
+        WebSwan Digital <span>Insights</span>
+        <span class="sub">Google Algorithm · State Compliance</span>
+      </h1>
+    </div>
+
+    <!-- Grid -->
+    <div class="dashboard-grid">
+      <!-- Google Card -->
+      <div class="card-module">
+        <div class="card-icon" aria-hidden="true">
+          <i class="fas fa-chart-simple"></i>
+        </div>
+        <h2>
+          <i class="fab fa-google" aria-hidden="true"></i> Google Updates
+        </h2>
+        <p>
+          Track the latest changes, confirmed updates, and expert analysis
+          from the Search Engine Roundtable.
+        </p>
+        <a href="https://www.seroundtable.com/category/google-updates" target="_blank" rel="noopener noreferrer">
+          <span>Visit hub</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
       </div>
-      <div class="brand-text">
-        <h1>
-          WebSwan Digital <span>Insights</span>
-          <span class="sub">Google Algorithm · Updates &amp; Analysis</span>
-        </h1>
+
+      <!-- ADA Resource Card -->
+      <div class="card-module">
+        <div class="card-icon" aria-hidden="true">
+          <i class="fas fa-universal-access"></i>
+        </div>
+        <h2>
+          <i class="fas fa-file-alt" aria-hidden="true"></i> ADA Resource
+        </h2>
+        <p>
+          Official DOJ rule on web &amp; mobile app accessibility (2024-03-08).
+        </p>
+        <a href="https://www.ada.gov/resources/2024-03-08-web-rule/" target="_blank" rel="noopener noreferrer">
+          <span>Read the rule</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
 
-    <!-- main: Google Algorithm -->
-    <div class="link-card">
-      <div class="card-icon" aria-hidden="true">
-        <i class="fas fa-chart-simple"></i>
-      </div>
-      <h2>
-        <i class="fab fa-google" aria-hidden="true"></i> Google Algorithm Updates
-      </h2>
-      <p>
-        Track the latest changes, confirmed updates, and expert analysis 
-        from the Search Engine Roundtable. Stay ahead of every core, 
-        spam, and ranking update that matters for your business.
-      </p>
-      <a href="https://www.seroundtable.com/category/google-updates" target="_blank" rel="noopener noreferrer">
-        <span>Visit the algorithm hub</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
+    <!-- "The WebSwan" branding line -->
+    <div class="webswan-brand">
+      <h3><i class="fas fa-swan"></i> The WebSwan</h3>
+      <p>Your Path to a Stronger Online Presence</p>
     </div>
 
-    <!-- Pricing / Connect button with new link -->
+    <!-- Pricing -->
     <div class="pricing-row">
       <a href="https://webswan-pricing-booking.netlify.app/" target="_blank" rel="noopener noreferrer" class="pricing-link">
         <i class="fas fa-hand-point-right" aria-hidden="true"></i> Click here to View website packages
@@ -299,15 +590,236 @@
       </a>
     </div>
 
-    <!-- footer with copyright -->
+    <!-- ===== STATE COMPLIANCE ===== -->
+    <div class="compliance-module">
+      <div class="module-header">
+        <i class="fas fa-shield-halved"></i>
+        <h2>State Compliance <span>Penalty Checker</span></h2>
+      </div>
+
+      <div class="state-input-row">
+        <input type="text" id="stateInput" placeholder="e.g. California, Texas…" onkeydown="if(event.key==='Enter') searchStateCompliance()">
+        <button class="check-btn" onclick="searchStateCompliance()">
+          <i class="fas fa-magnifying-glass"></i> Check
+        </button>
+      </div>
+
+      <div class="result-box" id="stateResult">
+        <div class="result-header">
+          <i class="fas fa-gavel"></i>
+          <span id="selectedStateName">Compliance Results</span>
+        </div>
+        <div class="result-body">
+          <div id="complianceDisplay"></div>
+          <div class="result-actions">
+            <button class="btn-open" onclick="openInNewTab()">
+              <i class="fas fa-arrow-up-right-from-square"></i> Search Online
+            </button>
+            <button class="btn-copy" onclick="copyStateLink()">
+              <i class="fas fa-copy"></i> Copy Link
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="footnote">
+        <i class="fas fa-info-circle"></i> Enter a US state to see regulations, penalties, and resources.
+      </p>
+    </div>
+
+    <!-- Footer -->
     <div class="footer-note">
       <span class="copyright">
         <i class="far fa-copyright" aria-hidden="true"></i> 2026 WebSwan Digital Solutions
       </span>
       <span class="brand-tag">
-        <i class="fas fa-swan" aria-hidden="true"></i> Google Updates
+        <i class="fas fa-swan" aria-hidden="true"></i> Google · Compliance
       </span>
     </div>
   </div>
+
+  <script>
+    // ---------- State Compliance Database ----------
+    const stateComplianceData = {
+      'california': {
+        name: 'California',
+        regulations: [
+          'California Consumer Privacy Act (CCPA) - Requires websites to disclose data collection practices',
+          'California Online Privacy Protection Act (CalOPPA) - Requires privacy policies',
+          'ADA Title III - Web accessibility requirements for businesses',
+          'Proposition 24 (CPRA) - Enhanced privacy rights for consumers'
+        ],
+        penalties: [
+          'CCPA violations: Up to $7,500 per intentional violation',
+          'ADA lawsuits: Average settlement $25,000-$50,000',
+          'CalOPPA violations: Up to $2,500 per violation',
+          'Class action lawsuits possible for widespread non-compliance'
+        ],
+        resources: [
+          'California Attorney General website for compliance guidelines',
+          'California Privacy Protection Agency (CPPA)',
+          'ADA.gov for accessibility standards'
+        ]
+      },
+      'texas': {
+        name: 'Texas',
+        regulations: [
+          'Texas Data Privacy and Security Act (TDPSA) - Effective July 2024',
+          'Texas Privacy Protection Act - Data breach notification requirements',
+          'ADA Title III - Web accessibility requirements',
+          'Texas Business and Commerce Code Chapter 521 - Data privacy'
+        ],
+        penalties: [
+          'TDPSA violations: Up to $7,500 per violation',
+          'ADA lawsuits: Average settlement $20,000-$45,000',
+          'Data breach penalties: Up to $250,000 per breach',
+          'Attorney General enforcement actions possible'
+        ],
+        resources: [
+          'Texas Office of the Attorney General',
+          'Texas Department of Information Resources',
+          'ADA.gov for accessibility standards'
+        ]
+      },
+      'new york': {
+        name: 'New York',
+        regulations: [
+          'New York Privacy Act (NYPA) - Comprehensive data privacy legislation',
+          'New York SHIELD Act - Data breach notification and security requirements',
+          'ADA Title III - Web accessibility requirements',
+          'NYC Local Law 144 - Automated Employment Decision Tools'
+        ],
+        penalties: [
+          'SHIELD Act violations: Up to $5,000 per violation',
+          'ADA lawsuits: Average settlement $25,000-$55,000',
+          'NYPA violations: Up to $7,500 per violation',
+          'Additional civil penalties and enforcement actions'
+        ],
+        resources: [
+          'New York State Attorney General',
+          'New York Department of State',
+          'ADA.gov for accessibility standards'
+        ]
+      },
+      'florida': {
+        name: 'Florida',
+        regulations: [
+          'Florida Privacy Protection Act (FPPA) - Data privacy requirements',
+          'Florida Information Protection Act (FIPA) - Data breach notifications',
+          'ADA Title III - Web accessibility requirements',
+          'Florida Statute 501.171 - Data breach reporting'
+        ],
+        penalties: [
+          'FPPA violations: Up to $7,500 per violation',
+          'ADA lawsuits: Average settlement $20,000-$40,000',
+          'FIPA violations: Up to $500,000 per breach event',
+          'Additional civil penalties possible'
+        ],
+        resources: [
+          'Florida Attorney General',
+          'Florida Department of Legal Affairs',
+          'ADA.gov for accessibility standards'
+        ]
+      }
+    };
+
+    function getDefaultCompliance(stateName) {
+      return {
+        name: stateName,
+        regulations: [
+          'State privacy laws may apply to website operations',
+          'ADA Title III - Web accessibility requirements for businesses',
+          'State-specific data breach notification requirements',
+          'Consumer protection laws regarding online practices'
+        ],
+        penalties: [
+          'ADA lawsuits: Average settlement $20,000-$50,000',
+          'Privacy violations: Up to $7,500 per violation',
+          'Data breach penalties vary by state',
+          'Attorney General enforcement actions possible'
+        ],
+        resources: [
+          'State Attorney General website',
+          'State Department of Commerce or Consumer Affairs',
+          'ADA.gov for accessibility standards'
+        ]
+      };
+    }
+
+    let currentSearchUrl = '';
+    let currentStateName = '';
+
+    function searchStateCompliance() {
+      const val = document.getElementById('stateInput').value.trim();
+      if (!val) { document.getElementById('stateInput').focus(); return; }
+
+      currentStateName = val;
+      const searchUrl = `https://www.google.com/search?q=state+of+${encodeURIComponent(val)}+website+compliance+penalty`;
+      currentSearchUrl = searchUrl;
+
+      document.getElementById('selectedStateName').innerText = val + ' Compliance Results';
+      document.getElementById('stateResult').classList.add('show');
+
+      const stateKey = val.toLowerCase().trim();
+      let data = stateComplianceData[stateKey];
+      if (!data) {
+        data = getDefaultCompliance(val);
+      }
+
+      const display = document.getElementById('complianceDisplay');
+      display.innerHTML = `
+        <div class="result-content">
+          <span class="state-badge"><i class="fas fa-flag-usa"></i> ${data.name}</span>
+
+          <h3><i class="fas fa-gavel" style="color:#1e6f9f;"></i> Regulations & Requirements</h3>
+          <ul>
+            ${data.regulations.map(reg => `<li><i class="fas fa-check-circle"></i> ${reg}</li>`).join('')}
+          </ul>
+
+          <div style="margin: 10px 0;">
+            <h3><i class="fas fa-exclamation-triangle" style="color:#e74c3c;"></i> Potential Penalties</h3>
+            <ul>
+              ${data.penalties.map(pen => `<li><i class="fas fa-exclamation-circle" style="color:#e74c3c;"></i> ${pen}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="compliance-note">
+            <i class="fas fa-info-circle" style="color:#1e6f9f;"></i>
+            <strong>Resources:</strong> ${data.resources.join(' • ')}
+          </div>
+
+          <div class="compliance-note" style="border-left-color: #e74c3c; background: #fdf0ef;">
+            <i class="fas fa-shield-halved" style="color:#e74c3c;"></i>
+            <strong>Important:</strong> This is general information. For specific legal advice, please consult with a qualified attorney familiar with ${data.name} laws.
+          </div>
+        </div>
+      `;
+    }
+
+    function openInNewTab() {
+      if (currentSearchUrl) {
+        window.open(currentSearchUrl, '_blank');
+      }
+    }
+
+    function copyStateLink() {
+      const url = currentSearchUrl;
+      if (!url) return;
+      navigator.clipboard?.writeText(url).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => btn.innerHTML = orig, 2000);
+      });
+    }
+
+    // Enter key support
+    document.getElementById('stateInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchStateCompliance();
+      }
+    });
+  </script>
 </body>
 </html>
